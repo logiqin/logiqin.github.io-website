@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LogiQin - Boutique AI Adoption</title>
+
+    <!-- Google Fonts (Inter as a modern alternative to Segoe UI) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="src/style.css" rel="stylesheet" />
+</head>
+
+<body class="bg-logiqin-gray text-logiqin-dark font-sans">
+
+    <!-- Header -->
+    <header class="bg-white/80 backdrop-blur-lg sticky top-0 z-50 shadow-sm">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="#" class="flex items-center space-x-2">
+                <img src="public/logo 120x40.svg" alt="Logo" class="h-10 w-auto">
+            </a>
+
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#explore"
+                    class="text-gray-600 hover:text-logiqin-blue transition-colors duration-300">Explore</a>
+                <a href="#services"
+                    class="text-gray-600 hover:text-logiqin-blue transition-colors duration-300">Services</a>
+                <a href="#results"
+                    class="text-gray-600 hover:text-logiqin-blue transition-colors duration-300">Results</a>
+                <a href="#casestudies" class="text-gray-600 hover:text-logiqin-blue transition-colors duration-300">Case
+                    studies</a>
+                <a href="#contact"
+                    class="text-gray-600 hover:text-logiqin-blue transition-colors duration-300">Contact</a>
+            </div>
+
+            <!-- Language Switcher & CTA -->
+            <div class="flex items-center space-x-4">
+                <!-- <div class="text-sm text-gray-500">
+                    <span class="font-bold text-logiqin-dark">EN</span>
+                    <span class="mx-1">|</span>
+                    <a href="#" class="hover:text-logiqin-blue">FR</a>
+                    <span class="mx-1">|</span>
+                    <a href="#" class="hover:text-logiqin-blue">CZ</a>
+                </div> -->
+                <a href="#contact"
+                    class="hidden sm:inline-block cta-button bg-logiqin-blue text-white font-bold py-2 px-5 rounded-lg text-sm">
+                    Get Started
+                </a>
+            </div>
+            <div class="md:hidden">
+                <button id="menu-open-btn" type="button"
+                    class="p-2 text-deep-charcoal rounded-md hover:bg-light-grey focus:outline-none">
+                    <span class="sr-only">Otevřít menu</span>
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </nav>
+    </header>
+    <div id="menu-overlay" class="fixed inset-0 bg-black/60 z-40 hidden"></div>
+    <div id="mobile-menu"
+        class="fixed top-0 right-0 h-full w-80 max-w-sm bg-white shadow-xl z-50 transform translate-x-full transition-transform duration-300 ease-in-out">
+        <div class="flex justify-end p-4">
+            <button id="menu-close-btn" class="p-2 text-deep-charcoal rounded-md hover:bg-light-grey">
+                <span class="sr-only">Zavřít menu</span>
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+        <div class="px-6 py-4 flex flex-col space-y-4">
+            <a href="#explore"
+                class="menu-link block px-3 py-2 rounded-md text-lg font-semibold text-deep-charcoal hover:bg-soft-blue hover:text-logiqin-blue">Explore</a>
+            <a href="#services"
+                class="menu-link block px-3 py-2 rounded-md text-lg font-semibold text-deep-charcoal hover:bg-soft-blue hover:text-logiqin-blue">Services</a>
+            <a href="#results"
+                class="menu-link block px-3 py-2 rounded-md text-lg font-semibold text-deep-charcoal hover:bg-soft-blue hover:text-logiqin-blue">Results</a>
+            <a href="#casestudies"
+                class="menu-link block px-3 py-2 rounded-md text-lg font-semibold text-deep-charcoal hover:bg-soft-blue hover:text-logiqin-blue">Case
+                studies</a>
+            <a href="#contact"
+                class="menu-link block w-full text-center mt-4 px-3 py-3 rounded-md text-lg font-bold text-white bg-logiqin-blue hover:opacity-90">Contact</a>
+        </div>
+    </div>
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="px-6 py-20 md:py-32 text-center bg-neuron-web">
+            <div class="max-w-4xl mx-auto">
+                <div
+                    class="bg-logiqin-soft-blue text-logiqin-blue font-bold py-2 px-4 rounded-full inline-block mb-4 text-sm">
+                    Franck Clowez & Etienne Duplessix - AI Specialists
+                </div>
+                <h1 class="text-headline-md md:text-headline-lg font-extrabold text-white mb-4">
+                    Unlock your AI potential <br class="hidden md:block"> Secure,
+                    Scalable, ROI driven
+                </h1>
+                <p class="text-subhead text-white max-w-3xl mx-auto mb-8">
+                    AI architecture & adoption design for maximum
+                    business impact
+                </p>
+                <a href="#services"
+                    class="cta-button bg-logiqin-blue text-white font-bold py-4 px-8 rounded-lg text-body-md inline-block">
+                    Explore Automations
+                </a>
+            </div>
+        </section>
+
+        <!-- potential section - start -->
+        <section id="explore" class="py-10">
+            <h2 class="text-center text-headline-md font-bold text-logiqin-dark mt-8">What could be <span
+                    class="text-logiqin-blue">your AI potential?</span></h2>
+            <h3 class="text-center text-subhead font-bold text-logiqin-dark mt-4">AI Agents capabilities</h3>
+            <div class="max-w-6xl mx-auto p-6 flex flex-wrap flex-col md:flex-row items-center justify-center mt-8">
+                <div class="relative z-20">
+                    <div class="md:hover:rotate-90 rotate-90 md:rotate-0 transition-all duration-300 ease-in-out group">
+                        <div
+                            class="rounded-full bg-sky-100 border-[10px] border-sky-500 w-56 h-56 flex items-center justify-center text-center p-4 arrow-right relative">
+                            <span
+                                class="text-xl font-semibold group-hover:-rotate-90 -rotate-90 md:rotate-0">Understand</span>
+                        </div>
+                    </div>
+                    <div class="w-60 mt-12 hidden md:block">
+                        <h3 class="text-lg font-semibold mb-2">Understand</h3>
+                        <ul class="list-disc list-inside space-y-1">
+                            <li>Securely access <br> and analyse your data</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="relative z-10">
+                    <div class="md:hover:rotate-90 rotate-90 md:rotate-0 transition-all duration-300 ease-in-out group">
+                        <div
+                            class="rounded-full bg-sky-100 border-[10px] border-sky-500 w-56 h-56 flex items-center justify-center text-center p-4 arrow-right relative">
+                            <span
+                                class="text-xl font-semibold group-hover:-rotate-90 -rotate-90 md:rotate-0">Decide</span>
+                        </div>
+                    </div>
+                    <div class="w-60 mt-12 hidden md:block">
+                        <h3 class="text-lg font-semibold mb-2">Decide</h3>
+                        <ul class="list-disc list-inside space-y-1">
+                            <li> Suggest the best next
+                                step with explainable
+                                reasoning</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="">
+                    <div class="md:hover:rotate-90 rotate-90 md:rotate-0 transition-all duration-300 ease-in-out group">
+                        <div
+                            class="rounded-full bg-sky-100 border-[10px] border-sky-500 w-56 h-56 flex items-center justify-center text-center p-4 arrow-right arrow-last relative">
+                            <span class="text-xl font-semibold group-hover:-rotate-90 -rotate-90 md:rotate-0">Act</span>
+                        </div>
+                    </div>
+                    <div class="w-60 mt-12 hidden md:block">
+                        <h3 class="text-lg font-semibold mb-2">Act</h3>
+                        <ul class="list-disc list-inside space-y-1">
+                            <li>Execute and
+                                Automate tasks
+                                inside your processes</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="flex flex-col md:hidden gap-6 mt-8 container mx-auto text-center">
+                <div>
+                    <h3 class="text-xl font-semibold mb-2">Understand</h3>
+                    <ul class="list-disc list-inside space-y-1">
+                        <li>Securely access and analyse your data</li>
+                        <li>Enrich it with external data</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-2">Decide</h3>
+                    <ul class="list-disc list-inside space-y-1">
+                        <li>Suggest the best next step with explainable reasoning</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-2">Act</h3>
+                    <ul class="list-disc list-inside space-y-1">
+                        <li>Execute and automate tasks inside your processes</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <!-- potential section - end -->
+
+        <!-- conviction section - start -->
+        <section class="bg-white py-10">
+            <h2 class="text-center text-headline-md font-bold text-logiqin-dark mt-8"><span
+                    class="text-logiqin-blue">Our </span>conviction</h2>
+            <h3 class="text-center text-subhead font-bold text-logiqin-dark mt-4">
+                <span class="text-logiqin-blue">AI</span> isn’t <span class="text-logiqin-blue">magic</span> - it’s
+                <span class="text-logiqin-blue">MATH and DATA</span>
+            </h3>
+            <div class="flex flex-col items-center">
+                <div class="mb-5 container mx-auto p-6 flex flex-col md:flex-row items-center justify-center">
+                    <div
+                        class="rounded-full bg-sky-100 border-4 border-sky-500 w-24 h-24 flex items-center justify-center text-center p-4 -mt-3 md:-mr-3">
+                        <span class="text-2xl font-semibold text-logiqin-blue">+10%</span>
+                    </div>
+                    <div
+                        class="rounded-full bg-sky-100 border-4 border-sky-500 w-28 h-28 flex items-center justify-center text-center p-4 -mt-3 md:-mr-3">
+                        <span class="text-2xl font-semibold text-logiqin-blue">+10%</span>
+                    </div>
+                    <div
+                        class="rounded-full bg-sky-100 border-4 border-sky-500 w-32 h-32 flex items-center justify-center text-center p-4 -mt-3 md:-mr-3">
+                        <span class="text-2xl font-semibold text-logiqin-blue">+10%</span>
+                    </div>
+                    <div
+                        class="rounded-full bg-sky-100 border-4 border-sky-500 w-36 h-36 flex items-center justify-center text-center p-4 -mt-3 md:-mr-3">
+                        <span class="text-2xl font-semibold text-logiqin-blue">+10%</span>
+                    </div>
+                    <div
+                        class="mt-5 md:ml-5 rounded-xl bg-sky-100 border-4 border-sky-500 w-60 h-60 flex items-center justify-center text-center p-4">
+                        <span class="text-[5rem] font-semibold text-logiqin-blue">≈2×</span>
+                    </div>
+                </div>
+                <div class="flex">
+                    <p class="p-5 border-t-4 border-sky-500 arrow-right-top-sm">Stack seven 10% wins and get ≈2× output…
+                    </p>
+                </div>
+            </div>
+        </section>
+        <!-- conviction section - end -->
+
+        <!-- Who we are section - start -->
+        <section class="bg-logiqin-gray p-10 md:p-14">
+            <h2 class="text-center text-headline-md font-bold text-logiqin-dark mt-8"><span
+                    class="text-logiqin-blue">Who </span>we are</h2>
+            <h3 class="text-center text-subhead font-bold text-logiqin-dark mt-4">
+                We help businesses move <span class="text-logiqin-blue">from AI hype to AI IMPACT</span>
+            </h3>
+            <!-- Chain of circular arrows -->
+            <div class="flex justify-center">
+                <div class="flex flex-col md:flex-row items-center bg-gray-100 gap-12">
+                    <ul class="text-2xl h-full flex flex-col justify-evenly">
+                        <li><span class="text-logiqin-blue font-semibold">ROI-focused design</span> <br> measured
+                            at total cost level</li>
+                        <li><span class="text-logiqin-blue font-semibold">Secure and compliant</span> <br> GDPR-
+                            friendly, infra-neutral</li>
+                        <li><span class="text-logiqin-blue font-semibold">Practical</span> <br> real use cases, no
+                            generic training</li>
+                    </ul>
+                    <svg width="320" height="820" viewBox="0 0 300 760" class="min-w-64">
+                        <defs>
+                            <marker id="arrowhead" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="3"
+                                markerHeight="3" orient="auto" markerUnits="strokeWidth" overflow="visible">
+                                <path d="M 0 0 L 10 5 L 0 10 z" fill="#109DFF" />
+                            </marker>
+                            <style>
+                                .ring {
+                                    fill: none;
+                                    stroke: #109DFF;
+                                    stroke-width: 20;
+                                    stroke-linecap: round;
+                                }
+
+                                .label {
+                                    font: 1.3rem/1.2 Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+                                    fill: #333;
+                                    font-weight: 600;
+                                    text-anchor: middle;
+                                }
+                            </style>
+                        </defs>
+
+                        <!-- Top arc (center 150,150, r=110) ends at bottom tangent (150,260) -->
+                        <g transform="translate(0,0)">
+                            <path class="ring" d="M 40,150 A 110,110 0 1 1 260,150 A 110,110 0 0 1 150,260" />
+                            <text class="label" x="150" y="155">Your tools</text>
+                        </g>
+
+                        <!-- Middle arc (center 150,370, r=110) ends at bottom tangent (150,480) -->
+                        <g>
+                            <path class="ring" d="M 150,260 A 110,110 0 0 1 150,480" transform="rotate(180 150 370)" />
+                            <text class="label" x="150" y="350">Your Data</text>
+                            <text class="label" x="150" y="380">enriched by</text>
+                            <text class="label" x="150" y="410">external Data</text>
+                        </g>
+
+                        <!-- Bottom arc (center 150,590, r=110) also ends at bottom (no next circle) -->
+                        <g>
+                            <path class="ring" d="M 40,590 A 110,110 0 1 1 260,590 A 110,110 0 0 1 150,700"
+                                transform="rotate(90 150 590)" marker-end="url(#arrowhead)" />
+                            <text class="label" x="150" y="585">Our</text>
+                            <text class="label" x="150" y="615">Architecture</text>
+                        </g>
+                    </svg>
+                </div>
+            </div>
+        </section>
+        <!-- Who we are section - end -->
+
+        <!-- Services Section -->
+        <section id="services" class="bg-white py-20 md:py-28">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-center text-headline-md font-bold text-logiqin-dark mt-8"><span
+                            class="text-logiqin-blue">What </span>we deliver</h2>
+                    <h3 class="text-center text-subhead font-bold text-logiqin-dark mt-4">
+                        We design AI adoption as a <span class="text-logiqin-blue">secure</span> and <span
+                            class="text-logiqin-blue">measurable </span> journey.
+                    </h3>
+                </div>
+
+                <!-- Service Cards Grid -->
+                <div class="grid md:grid-cols-1 lg:grid-cols-3 gap-8">
+
+                    <!-- Card 1: Logistics -->
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <div
+                                    class="bg-logiqin-soft-blue h-16 w-16 rounded-lg flex items-center justify-center mb-4">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="#109DFF" class="size-8">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M10.343 3.94c.09-.542.56-.94 1.11-.94h1.093c.55 0 1.02.398 1.11.94l.149.894c.07.424.384.764.78.93.398.164.855.142 1.205-.108l.737-.527a1.125 1.125 0 0 1 1.45.12l.773.774c.39.389.44 1.002.12 1.45l-.527.737c-.25.35-.272.806-.107 1.204.165.397.505.71.93.78l.893.15c.543.09.94.559.94 1.109v1.094c0 .55-.397 1.02-.94 1.11l-.894.149c-.424.07-.764.383-.929.78-.165.398-.143.854.107 1.204l.527.738c.32.447.269 1.06-.12 1.45l-.774.773a1.125 1.125 0 0 1-1.449.12l-.738-.527c-.35-.25-.806-.272-1.203-.107-.398.165-.71.505-.781.929l-.149.894c-.09.542-.56.94-1.11.94h-1.094c-.55 0-1.019-.398-1.11-.94l-.148-.894c-.071-.424-.384-.764-.781-.93-.398-.164-.854-.142-1.204.108l-.738.527c-.447.32-1.06.269-1.45-.12l-.773-.774a1.125 1.125 0 0 1-.12-1.45l.527-.737c.25-.35.272-.806.108-1.204-.165-.397-.506-.71-.93-.78l-.894-.15c-.542-.09-.94-.56-.94-1.109v-1.094c0-.55.398-1.02.94-1.11l.894-.149c.424-.07.765-.383.93-.78.165-.398.143-.854-.108-1.204l-.526-.738a1.125 1.125 0 0 1 .12-1.45l.773-.773a1.125 1.125 0 0 1 1.45-.12l.737.527c.35.25.807.272 1.204.107.397-.165.71-.505.78-.929l.15-.894Z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                                    </svg>
+
+                                </div>
+                                <h3 class="text-subhead font-bold mb-2">Process-Specific Training / Workshops</h3>
+                                <p class="text-caption text-logiqin-blue">→ Enable your teams to turn AI into real
+                                    business impact.</p>
+                            </div>
+                            <div class="flip-card-back">
+                                <ul class="list-disc list-inside space-y-1 text-white">
+                                    <li>Hands-on enablement with your own tools & data</li>
+                                    <li>Focused on real processes, not generic AI literacy</li>
+                                    <li>Build the skills to run AI-powered workflows
+                                        independently</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Manufacturing -->
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <div
+                                    class="bg-logiqin-soft-blue h-16 w-16 rounded-lg flex items-center justify-center mb-4">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="#109DFF" class="size-8">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z" />
+                                    </svg>
+
+                                </div>
+                                <h3 class="text-subhead font-bold mb-2">AI Agentic Architecture Design</h3>
+                                <p class="text-caption text-logiqin-blue">→ From knowledge to action, securely and
+                                    at scale.</p>
+                            </div>
+                            <div class="flip-card-back">
+                                <ul class="list-disc list-inside space-y-1 text-white">
+                                    <li>Secure, scalable workflows connecting internal &
+                                        external data</li>
+                                    <li>Optimized for cost efficiency & GDPR compliance</li>
+                                    <li>AI agents designed as the bridge from insight to
+                                        automation</li>
+                                    <li>Hybrid, on-prem, or cloud-ready deployment</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Professional Services -->
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <div
+                                    class="bg-logiqin-soft-blue h-16 w-16 rounded-lg flex items-center justify-center mb-4">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="#109DFF" class="size-8">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+                                    </svg>
+
+                                </div>
+                                <h3 class="text-subhead font-bold mb-2">AI Product Implementation Support</h3>
+                                <p class="text-caption text-logiqin-blue">→ Select, integrate, and scale the right
+                                    solutions — without lock-in.</p>
+                            </div>
+                            <div class="flip-card-back">
+                                <ul class="list-disc list-inside space-y-1 text-white">
+                                    <li>Product scouting to find the best-fit tools</li>
+                                    <li>Tender preparation with clear requirements &
+                                        evaluation criteria</li>
+                                    <li>Integration oversight for seamless fit into your IT
+                                        ecosystem</li>
+                                    <li>Focus on long-term maintainability & fast ROI</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How We Work Section -->
+        <section id="how-we-work" class="bg-logiqin-gray p-10 md:p-14 overflow-hidden">
+            <div class="container mx-auto">
+                <h2 class="text-center text-headline-md font-bold text-logiqin-dark mt-8"><span
+                        class="text-logiqin-blue">How </span> we work – The LogiQin pathway</h2>
+                <h3 class="text-center text-subhead font-bold text-logiqin-dark mt-4">
+                    We design AI adoption as a <span class="text-logiqin-blue">secure, measurable</span> journey.
+                </h3>
+                <!-- Stair steps container -->
+                <div class="max-w-6xl mx-auto mt-24 md:mt-32 lg:mt-48">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 items-start justify-center gap-8">
+                        <!-- Step 1: Discover -->
+                        <div class="stair-step p-4 flex-1 relative">
+                            <div class="border-t-8 border-l-8 border-logiqin-blue p-6 h-full">
+                                <h2 class="text-logiqin-blue font-bold text-2xl mb-2">Discover</h2>
+                                <h3 class="font-semibold mb-3">Map AI pain points & data risks</h3>
+                                <ul class="list-disc list-inside space-y-2 text-sm text-gray-600">
+                                    <li>Understand where automation will deliver the biggest ROI</li>
+                                    <li>Assess data quality, security, and compliance risks</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- Step 2: Design -->
+                        <div class="stair-step p-4 flex-1 relative md:-mt-16">
+                            <div class="border-t-8 border-l-8 border-logiqin-blue p-6 h-full">
+                                <h2 class="text-logiqin-blue font-bold text-2xl mb-2">Design</h2>
+                                <h3 class="font-semibold mb-3">Define agent logic,
+                                    tools, and environment</h3>
+                                <ul class="list-disc list-inside space-y-2 text-sm text-gray-600">
+                                    <li>Architect secure workflows that
+                                        combine internal & external
+                                        data</li>
+                                    <li>Plan for scalability, GDPR
+                                        compliance, and cost control</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- Step 3: Deploy -->
+                        <div class="stair-step p-4 flex-1 relative lg:-mt-32">
+                            <div class="border-t-8 border-l-8 border-logiqin-blue p-6 h-full">
+                                <h2 class="text-logiqin-blue font-bold text-2xl mb-2">Deploy</h2>
+                                <h3 class="font-semibold mb-3">Support secure proof-
+                                    of-concept (PoC)</h3>
+                                <ul class="list-disc list-inside space-y-2 text-sm text-gray-600">
+                                    <li>On-prem, hybrid, or cloud-
+                                        ready deployment</li>
+                                    <li>Embed AI agents in existing
+                                        processes and tools</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- Step 4: Empower -->
+                        <div class="stair-step p-4 flex-1 relative md:-mt-16 lg:-mt-48">
+                            <div class="border-t-8 border-l-8 border-logiqin-blue p-6 h-full">
+                                <h2 class="text-logiqin-blue font-bold text-2xl mb-2">Empower</h2>
+                                <h3 class="font-semibold mb-3">Train process owners for
+                                    sustainable adoption</h3>
+                                <ul class="list-disc list-inside space-y-2 text-sm text-gray-600">
+                                    <li>Process-specific workshops for
+                                        day-to-day use</li>
+                                    <li>Build in-house capability to
+                                        evolve the solution</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Baseline arrow with captions -->
+                <div class="relative mt-12 max-w-6xl mx-auto">
+                    <div class="h-1 bg-logiqin-blue w-full"></div>
+                    <div
+                        class="absolute -right-2 -top-1.5 w-0 h-0 border-l-[12px] border-l-logiqin-blue border-y-[8px] border-y-transparent">
+                    </div>
+
+                    <div
+                        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-center mt-6 text-logiqin-blue font-medium text-sm">
+                        <p>High ROI use cases vs Data Risks</p>
+                        <p>Blueprint secure, scalable agent workflows on your existing stack</p>
+                        <p>Prove value fast with a PoC on your infrastructure (on‑prem, Azure, hybrid).</p>
+                        <p>Make teams autonomous to operate and improve the solution - no lock‑in</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Results Section -->
+        <section id="results" class="bg-white py-20 md:py-28">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-center text-headline-md font-bold text-logiqin-dark mt-8"><span
+                            class="text-logiqin-blue">Why</span> it works</h2>
+                    <h3 class="text-center text-subhead font-bold text-logiqin-dark mt-4">
+                        We help businesses move <span class="text-logiqin-blue">from AI hype to AI IMPACT</span>
+                    </h3>
+                </div>
+
+                <!-- Bubbles Container -->
+                <div class="flex flex-wrap justify-center items-center gap-8 lg:gap-12">
+                    <!-- Bubble 1: Productivity -->
+                    <div
+                        class="flex flex-col justify-center items-center text-center w-64 h-64 rounded-full bg-white border-4 border-logiqin-soft-blue shadow-lg p-4 transform hover:scale-105 transition-transform duration-300">
+                        <span class="text-4xl">📈</span>
+                        <p class="text-headline-md font-bold text-logiqin-dark mt-2">+10-20%</p>
+                        <p class="text-caption text-gray-600 leading-tight">productivity lift in first quarter of "real
+                            use"</p>
+                    </div>
+
+                    <!-- Bubble 2: Costs (Center) -->
+                    <div
+                        class="flex flex-col justify-center items-center text-center w-72 h-72 rounded-full bg-logiqin-blue text-white shadow-2xl p-4 transform hover:scale-105 transition-transform duration-300 order-first md:order-none">
+                        <span class="text-4xl">🚀</span>
+                        <p class="text-headline-md font-bold mt-2">&lt; 40 Days</p>
+                        <p class="text-caption leading-tight">ROI for pilot projects</p>
+                    </div>
+
+                    <!-- Bubble 3: ROI -->
+                    <div
+                        class="flex flex-col justify-center items-center text-center w-64 h-64 rounded-full bg-white border-4 border-logiqin-soft-blue shadow-lg p-4 transform hover:scale-105 transition-transform duration-300">
+                        <span class="text-4xl">📉</span>
+                        <p class="text-headline-md font-bold text-logiqin-dark mt-2">-25%</p>
+                        <p class="text-caption text-gray-600 leading-tight">process costs via micro-LLM automations</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Case study 1-->
+        <section id="casestudies" class="bg-logiqin-gray py-10 md:py-14">
+            <div class="container mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
+                <!-- image always first -->
+                <div class="md:w-1/2">
+                    <div class="bg-white rounded-xl p-8 shadow-lg">
+                        <img src="article2.png" alt="Lorem Ipsum" class="rounded-lg w-full">
+                    </div>
+                </div>
+                <!-- text second -->
+                <div class="md:w-1/2 text-center md:text-left">
+                    <h2 class="text-headline-md font-bold text-logiqin-dark">Case study - ZOO Liberec</h2>
+                    <p class="text-body-lg text-gray-600 mt-4 mb-6">How we helped ZOO Liberec with process automation
+                        and saved them 20 % of the process costs last year.</p>
+                    <a href="blog-detail.html" class="text-logiqin-blue font-bold text-body-md hover:underline">More
+                        details →</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Case study 2-->
+        <section class="bg-logiqin-gray py-10 md:py-14">
+            <!-- reverse order only on desktop -->
+            <div class="container mx-auto px-6 flex flex-col md:flex-row md:flex-row-reverse items-center gap-12">
+                <!-- image always first on mobile, but reversed on desktop -->
+                <div class="md:w-1/2">
+                    <div class="bg-white rounded-xl p-8 shadow-lg">
+                        <img src="article1.png" alt="Lorem Ipsum" class="rounded-lg w-full">
+                    </div>
+                </div>
+                <!-- text second -->
+                <div class="md:w-1/2 text-center md:text-left">
+                    <h2 class="text-headline-md font-bold text-logiqin-dark">Case study - Innogy</h2>
+                    <p class="text-body-lg text-gray-600 mt-4 mb-6">With our automation we lift productivity and save
+                        costs in innogy to help them offer fair prices of electricity to the customers.</p>
+                    <a href="blog-detail.html" class="text-logiqin-blue font-bold text-body-md hover:underline">More
+                        details →</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Partners/Collaborations Section -->
+        <section id="partners" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-headline-md font-bold text-logiqin-dark">Trusted by Industry Innovators</h2>
+                    <p class="text-body-lg text-gray-500 mt-2">We're proud to collaborate with companies shaping the
+                        future.</p>
+                </div>
+                <!-- The logo carousel container -->
+                <div class="logo-carousel">
+                    <!-- The track that holds and animates the logos -->
+                    <div class="logo-track space-x-16">
+                        <!-- Original set of logos -->
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="partner-logo">
+                            <img src="public/innogy.png" alt="Partner Company 1 Logo" class="h-20">
+                        </a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="partner-logo">
+                            <img src="public/zoo.png" alt="Partner Company 2 Logo" class="h-20">
+                        </a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="partner-logo">
+                            <img src="public/koni.png" alt="Partner Company 3 Logo" class="h-20">
+                        </a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="partner-logo">
+                            <img src="public/itt.png" alt="Partner Company 3 Logo" class="h-20">
+                        </a>
+                        <!-- Duplicate set of logos for seamless animation -->
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="partner-logo">
+                            <img src="public/innogy.png" alt="Partner Company 1 Logo" class="h-20">
+                        </a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="partner-logo">
+                            <img src="public/zoo.png" alt="Partner Company 2 Logo" class="h-20">
+                        </a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="partner-logo">
+                            <img src="public/koni.png" alt="Partner Company 3 Logo" class="h-20">
+                        </a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="partner-logo">
+                            <img src="public/itt.png" alt="Partner Company 3 Logo" class="h-20">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="bg-logiqin-blue">
+            <div class="container mx-auto px-6 py-16">
+                <div class="grid grid-cols-1 md:grid-cols-3 items-center gap-8 text-center">
+
+                    <!-- Franck -->
+                    <div>
+                        <img src="public/franck-clowez-photo.png" alt="Franck Clowez" class="mx-auto w-64 h-64">
+                        <h3 class="font-bold text-white mt-4">Franck Clowez</h3>
+                        <p class="text-logiqin-soft-blue/80">Biz Consulting</p>
+                        <a href="mailto:Franck@logiqin.cloud"
+                            class="text-white hover:underline">Franck@logiqin.cloud</a>
+                    </div>
+
+                    <!-- CTA -->
+                    <div>
+                        <h2 class="text-headline-md font-bold text-white">Let’s Start & Unlock your AI potential</h2>
+                        <p class="text-body-lg text-logiqin-soft-blue/80 mt-2 mb-8">
+                            BOOK your AI discovery SESSION!
+                        </p>
+                        <a href="mailto:hello@logiqin.ai"
+                            class="cta-button bg-white text-logiqin-blue font-bold py-4 px-8 rounded-lg text-body-md inline-block shadow-lg">
+                            hello@logiqin.ai
+                        </a>
+                        <p class="text-white/70 italic mt-6 text-body-md">"The first step to intelligent automation is a
+                            simple
+                            conversation."</p>
+                    </div>
+
+                    <!-- Etienne -->
+                    <div>
+                        <img src="public/etienne-duplessix-photo.png" alt="Etienne Duplessix" class="mx-auto w-64 h-64">
+                        <h3 class="font-bold text-white mt-4">Etienne Duplessix</h3>
+                        <p class="text-logiqin-soft-blue/80">Tech Consulting</p>
+                        <a href="mailto:Etienne@logiqin.cloud"
+                            class="text-white hover:underline">Etienne@logiqin.cloud</a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <section class="bg-neuron-web contact-bg-rotated bg-deep-charcoal py-16 sm:py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-12 items-center">
+                <div class="text-white">
+                    <h2 class="text-3xl font-bold">Don't miss AI revolution</h2>
+                    <p class="mt-4 text-lg text-white">Join us and together we will step into new age of business!</p>
+                </div>
+
+                <div class="bg-slate-800/90 p-8 rounded-lg text-slate-300">
+                    <div class="space-y-4">
+                        <p>
+                            <strong class="block text-white">Mail:</strong>
+                            <a href="mailto:ai@logiqin.cloud" class="hover:text-logiqin-blue">hello@logiqin.ai</a>
+                        </p>
+                        <p>
+                            <strong class="block text-white">Mobile:</strong>
+                            <a href="tel:+420123456789" class="hover:text-logiqin-blue">+420 725 177 736</a>
+                        </p>
+                        <p>
+                            <strong class="block text-white">Address:</strong>
+                            V Roháčích 161/4, Praha 5, 158 00, Czech Republic
+                        </p>
+                        <p>
+                            <strong class="block text-white">Company ID:</strong>
+                            CZ10816658
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-logiqin-dark text-white">
+        <div class="container mx-auto px-6 py-8 text-center text-gray-400">
+            <a href="https://www.makustudio.cz"> &copy; 2025 <span class="hover:text-white">MAKU STUDIO</span></a>
+        </div>
+    </footer>
+    <!-- Scripts -->
+    <script src="src/main.js" type="module"></script>
+</body>
+
+</html>

@@ -1,0 +1,231 @@
+@import "tailwindcss";
+
+@theme {
+  /* Colors */
+  --color-logiqin-blue: #109dff;
+  --color-logiqin-soft-blue: #e4f3ff;
+  --color-logiqin-gray: #f2f2f2;
+  --color-logiqin-dark: #1a202c;
+
+  /* Fonts */
+  --font-sans: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+  /* Text sizes */
+  --text-headline-lg: 2.5rem;
+  --text-headline-md: 2.25rem;
+  --text-headline-sm: 1.75rem;
+  --text-subhead: 1.5rem;
+  --text-body-lg: 1.25rem;
+  --text-body-md: 1.125rem;
+  --text-caption: 1rem;
+
+  /* Line-heights (use with `leading-*` classes) */
+  --leading-tight-12: 1.2;
+  --leading-relaxed-14: 1.4;
+  --leading-comfy-16: 1.6;
+  --leading-normal-15: 1.5;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.cta-button {
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px theme("colors.logiqin-blue/30"),
+    0 4px 6px -4px theme("colors.logiqin-blue/30");
+}
+
+.contact-bg-rotated {
+  position: relative;
+  overflow: hidden;
+}
+
+.bg-neuron-web {
+  position: relative;
+  background-image: url("/public/neuron-web.webp");
+  background-size: cover;
+  background-position: center;
+}
+
+.contact-bg-rotated::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  transform: rotate(180deg);
+  opacity: 1;
+  filter: blur(4px);
+  transition: opacity 0.3s ease-in-out;
+  transform: scale(1.05);
+}
+
+.contact-bg-rotated::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-color: #1a202c6b;
+  pointer-events: none;
+}
+
+.contact-bg-rotated > * {
+  position: relative;
+  z-index: 1;
+}
+.partner-logo img {
+  filter: grayscale(100%);
+  opacity: 0.7;
+  transition: all 0.3s ease-in-out;
+}
+.partner-logo:hover img {
+  filter: grayscale(0%);
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+.arrow-right::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 88.5%;
+  transform: translateY(-50%);
+  z-index: -1;
+
+  width: 0;
+  height: 0;
+
+  border-top: 80px solid transparent;
+  border-bottom: 80px solid transparent;
+  border-left: 80px solid #0ea5e9; 
+}
+
+.arrow-right-top-sm {
+  position: relative; 
+}
+
+.arrow-right-top-sm::after {
+  content: "";
+  position: absolute;
+  top: -3%; 
+  left: 100%; 
+  transform: translateY(-50%); 
+  width: 0;
+  height: 0;
+
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 10px solid #0ea5e9; 
+}
+
+@media (min-width: 48rem) {
+  .arrow-last::after {
+    border-left: 80px solid transparent;
+  }
+
+  .arrow-last:hover::after {
+    border-left: 80px solid #0ea5e9;
+  }
+}
+@media (max-width: 48rem) {
+  .arrow-last::after {
+    border-left: 80px solid transparent;
+  }
+}
+
+/* Styles for the card flip animation */
+.flip-card {
+  background-color: transparent;
+  height: 300px;
+  perspective: 1000px;
+}
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.7s;
+  transform-style: preserve-3d;
+}
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; 
+  backface-visibility: hidden;
+  border-radius: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+.flip-card-front {
+  background-color: theme("colors.logiqin-gray");
+}
+.flip-card-back {
+  background-color: theme("colors.logiqin-blue");
+  color: white;
+  transform: rotateY(180deg);
+}
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.logo-carousel {
+  overflow: hidden;
+  position: relative;
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    white 20%,
+    white 80%,
+    transparent
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    white 20%,
+    white 80%,
+    transparent
+  );
+}
+.logo-track {
+  display: flex;
+  width: max-content;
+  animation: scroll 40s linear infinite;
+}
+.logo-carousel:hover .logo-track {
+  animation-play-state: paused;
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.stair-step {
+  opacity: 0;
+}
+.stair-step.animate {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
