@@ -2,8 +2,8 @@ name: Deploy Vite site to GitHub Pages
 
 on:
   push:
-    branches: [ "main" ]   # runs when you push to main
-  workflow_dispatch:        # allows manual run
+    branches: [ "main" ]
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -16,16 +16,16 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v4
         with:
-          node-version: 20   # Vite requires Node >= 20.19
+          node-version: 20
 
-      - run: npm ci          # install dependencies (faster than npm install)
-      - run: npm run build   # build site into dist/
+      - run: npm ci
+      - run: npm run build
 
-      - uses: actions/upload-pages-artifact@v2
+      - uses: actions/upload-pages-artifact@v3
         with:
-          path: dist       # upload built files
+          path: ./dist
 
   deploy:
     runs-on: ubuntu-latest
@@ -36,4 +36,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
