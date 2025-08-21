@@ -143,7 +143,10 @@ html {
 .flip-card {
   background-color: transparent;
   height: 300px;
-  perspective: 1000px;
+  perspective: 1000px; /* Creates the 3D space */
+  -webkit-perspective: 1000px; /* iOS Safari needs the prefixed perspective */
+  -webkit-tap-highlight-color: transparent; /* remove grey tap highlight on iOS */
+  cursor: pointer; /* indicates it is interactive on touch */
 }
 .flip-card-inner {
   position: relative;
@@ -151,8 +154,13 @@ html {
   height: 100%;
   transition: transform 0.7s;
   transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d; /* iOS Safari 3D context */
+  will-change: transform; /* hint for smoother animation */
 }
 .flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+.flip-card:focus-within .flip-card-inner {
   transform: rotateY(180deg);
 }
 .flip-card-front,
@@ -160,9 +168,10 @@ html {
   position: absolute;
   width: 100%;
   height: 100%;
-  -webkit-backface-visibility: hidden; 
+  -webkit-backface-visibility: hidden; /* For Safari/iOS */
   backface-visibility: hidden;
-  border-radius: 0.75rem;
+  -webkit-transform: translateZ(0); /* nudge for iOS rendering */
+  border-radius: 0.75rem; /* 12px */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -177,6 +186,26 @@ html {
   background-color: theme("colors.logiqin-blue");
   color: white;
   transform: rotateY(180deg);
+}
+
+@media (hover: none) {
+  .flip-card.is-flipped .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .flip-card-inner {
+    transition: none;
+  }
+}
+@media (hover: none) {
+  .flip-card:hover .flip-card-inner { /* disable hover on touch */
+    transform: none;
+  }
+  .flip-card.is-flipped .flip-card-inner {
+    transform: rotateY(180deg);
+  }
 }
 @keyframes scroll {
   from {
@@ -229,3 +258,68 @@ html {
   animation: fadeInUp 0.8s ease-out forwards;
 }
 
+/* A little extra style for smooth scrolling and focus states */
+html {
+  scroll-behavior: smooth;
+}
+
+.cta-button {
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px theme("colors.logiqin-blue/30"),
+    0 4px 6px -4px theme("colors.logiqin-blue/30");
+}
+
+.contact-bg-rotated {
+  position: relative;
+  overflow: hidden;
+}
+
+.bg-neuron-web {
+  background-image: url("/public/neuron-web.webp");
+  background-size: cover;
+  background-position: center;
+}
+
+.contact-bg-rotated::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  transform: rotate(180deg);
+  opacity: 1;
+  filter: blur(4px);
+  transition: opacity 0.3s ease-in-out;
+  transform: scale(1.05);
+}
+
+/* Přidání barevného overlaye */
+.contact-bg-rotated::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-color: #1a202c6b;
+  /* #1A202C80 je logiqin-dark s 50% opacity */
+  pointer-events: none;
+}
+
+.contact-bg-rotated > * {
+  position: relative;
+  z-index: 1;
+}
+
+
+/* Přidání barevného overlaye */
+.landing-overlay::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-color: #1a202c6e;
+  /* #1A202C80 je logiqin-dark s 50% opacity */
+  pointer-events: none;
+}
