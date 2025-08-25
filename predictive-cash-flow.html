@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Logiqin Blog – Predictive Cash Flow</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="index.css" rel="stylesheet">
+
+      <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts (Inter as a modern alternative to Segoe UI) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="index.css" rel="stylesheet" />
+    <!-- Tailwind Custom Theme -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'logiqin-blue': '#109DFF',
+            'logiqin-soft-blue': '#E4F3FF',
+            'logiqin-gray': '#F2F2F2',
+            'logiqin-dark': '#1A202C',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          fontSize: {
+            'headline-lg': ['2.5rem', { lineHeight: '1.2' }],
+            'headline-md': ['2.25rem', { lineHeight: '1.2' }],
+            'headline-sm': ['1.75rem', { lineHeight: '1.2' }],
+            'subhead': ['1.5rem', { lineHeight: '1.4' }],
+            'body-lg': ['1.25rem', { lineHeight: '1.6' }],
+            'body-md': ['1.125rem', { lineHeight: '1.6' }],
+            'caption': ['1rem', { lineHeight: '1.5' }],
+          },
+          boxShadow: {
+            'card': '0 10px 30px -12px rgba(0,0,0,0.15)',
+          }
+        }
+      }
+    }
+  </script>
+
+</head>
+
+<body class="bg-logiqin-gray text-gray-800">
+
+<!-- Header / Menu -->
+  <header class="bg-white/80 backdrop-blur-lg sticky top-0 z-50 shadow-sm">
+    <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="/" class="flex items-center space-x-2">
+        <img src="logo 120x40.svg" alt="Logo" class="h-10 w-auto">
+      </a>
+
+      <div class="hidden md:flex items-center space-x-8">
+        <a href="/#explore" class="text-gray-600 hover:text-logiqin-blue transition-colors">Explore</a>
+        <a href="/#services" class="text-gray-600 hover:text-logiqin-blue transition-colors">Services</a>
+        <a href="/#results" class="text-gray-600 hover:text-logiqin-blue transition-colors">Results</a>
+        <a href="/#casestudies" class="text-gray-600 hover:text-logiqin-blue transition-colors">Case studies</a>
+        <a href="/#contact" class="text-gray-600 hover:text-logiqin-blue transition-colors">Contact</a>
+      </div>
+
+      <div class="flex items-center space-x-4">
+        <div class="text-sm text-gray-500">
+          <span class="font-bold text-logiqin-dark">EN</span>
+          <span class="mx-1">|</span>
+          <a href="#" class="hover:text-logiqin-blue">FR</a>
+          <span class="mx-1">|</span>
+          <a href="#" class="hover:text-logiqin-blue">CZ</a>
+        </div>
+        <a href="/#contact" class="hidden sm:inline-block bg-logiqin-blue text-white font-bold py-2 px-5 rounded-lg text-sm">
+          Get Started
+        </a>
+      </div>
+
+      <div class="md:hidden">
+        <button id="menu-open-btn" type="button" class="p-2 text-logiqin-dark rounded-md hover:bg-gray-100 focus:outline-none">
+          <span class="sr-only">Open menu</span>
+          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Mobile menu -->
+  <div id="menu-overlay" class="fixed inset-0 bg-black/60 z-40 hidden"></div>
+  <div id="mobile-menu" class="fixed top-0 right-0 h-full w-80 max-w-sm bg-white shadow-xl z-50 transform translate-x-full transition-transform duration-300 ease-in-out">
+    <div class="flex justify-end p-4">
+      <button id="menu-close-btn" class="p-2 text-logiqin-dark rounded-md hover:bg-gray-100">
+        <span class="sr-only">Close menu</span>
+        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+    </div>
+    <div class="px-6 py-4 flex flex-col space-y-4">
+      <a href="/#explore" class="menu-link block px-3 py-2 rounded-md text-lg font-semibold hover:bg-logiqin-soft-blue hover:text-logiqin-blue">Explore</a>
+      <a href="/#services" class="menu-link block px-3 py-2 rounded-md text-lg font-semibold hover:bg-logiqin-soft-blue hover:text-logiqin-blue">Services</a>
+      <a href="/#results" class="menu-link block px-3 py-2 rounded-md text-lg font-semibold hover:bg-logiqin-soft-blue hover:text-logiqin-blue">Results</a>
+      <a href="/#casestudies" class="menu-link block px-3 py-2 rounded-md text-lg font-semibold hover:bg-logiqin-soft-blue hover:text-logiqin-blue">Case studies</a>
+      <a href="/#contact" class="menu-link block w-full text-center mt-4 px-3 py-3 rounded-md text-lg font-bold text-white bg-logiqin-blue hover:opacity-90">Contact</a>
+    </div>
+  </div>
+
+
+  <!-- Blog Detail -->
+  <main class="py-16">
+    <div class="container mx-auto px-6 lg:px-12 max-w-4xl">
+
+      <!-- Hero -->
+      <header class="text-center mb-12">
+        <h1 class="text-4xl md:text-5xl font-bold text-logiqin-dark">
+          🌐 Website Version — Predictive Cash Flow
+        </h1>
+        <p class="mt-4 text-gray-500 text-lg">
+          By <span class="font-semibold text-logiqin-blue">Logiqin Team</span> • Jan 15, 2025
+        </p>
+      </header>
+
+      <!-- Featured Image -->
+      <div class="mb-10">
+        <div class="text-center mb-6">
+          <p class="text-logiqin-blue italic text-xl">"Predict liquidity before it hits your books."</p>
+        </div>
+        <img src="public/article2.png"
+          alt="Predictive Cash Flow Solution" class="rounded-xl shadow-lg w-full">
+      </div>
+
+      <!-- Blog Content -->
+      <article class="prose prose-lg max-w-none text-gray-700">
+        
+        <h2 class="text-2xl font-bold text-logiqin-dark mt-8 mb-4">The Problem with Traditional Cash Forecasting</h2>
+        <p class="text-lg leading-relaxed mb-6">
+          Today's cash forecasts sit in <strong>spreadsheets</strong> — static, late, and often wrong. Finance teams spend hours reconciling <strong>ERP, CRM, and bank data</strong>, yet liquidity surprises still appear.
+        </p>
+        <p class="text-lg leading-relaxed mb-6">
+          ERP treasury modules (SAP, Oracle, Dynamics) are available, but adoption is low due to <strong>complexity and modest accuracy</strong>.
+        </p>
+
+        <h2 class="text-2xl font-bold text-logiqin-dark mt-8 mb-4">The Solution: Predictive Cash Flow & Capital</h2>
+        <p class="text-lg leading-relaxed mb-6">
+          AI-driven rolling forecasts that learn from <strong>seasonality, customer payment behavior, FX, and external drivers</strong>.
+        </p>
+
+        <h2 class="text-2xl font-bold text-logiqin-dark mt-8 mb-4">Value Delivered</h2>
+        <div class="bg-logiqin-soft-blue p-6 rounded-xl mb-8">
+          <ul class="space-y-3 text-lg">
+            <li class="flex items-start">
+              <span class="text-logiqin-blue font-bold mr-3">•</span>
+              <span><strong>20–40% fewer forecast errors</strong> vs. spreadsheets</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-logiqin-blue font-bold mr-3">•</span>
+              <span><strong>30–50% faster reporting</strong> with CFO-ready packs in one click</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-logiqin-blue font-bold mr-3">•</span>
+              <span><strong>2–5% trapped cash unlocked</strong> via smarter collections</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-logiqin-blue font-bold mr-3">•</span>
+              <span><strong>Trust built-in</strong>: confidence bands and variance explanations</span>
+            </li>
+          </ul>
+        </div>
+
+        <h2 class="text-2xl font-bold text-logiqin-dark mt-8 mb-4">How It Works: Three Integrated Layers</h2>
+        
+        <div class="space-y-6 mb-8">
+          <div class="bg-white p-6 rounded-xl shadow-card">
+            <h3 class="text-xl font-bold text-logiqin-blue mb-3">1. Data Ingestion</h3>
+            <p class="text-lg">
+              Ingest <strong>AR/AP, ERP, CRM, and bank feeds</strong> via UiPath or API integration with your existing systems.
+            </p>
+          </div>
+
+          <div class="bg-white p-6 rounded-xl shadow-card">
+            <h3 class="text-xl font-bold text-logiqin-blue mb-3">2. AI Model Training</h3>
+            <p class="text-lg">
+              Train lightweight predictive models using <strong>Python/AutoML</strong> that learn from historical patterns and external factors.
+            </p>
+          </div>
+
+          <div class="bg-white p-6 rounded-xl shadow-card">
+            <h3 class="text-xl font-bold text-logiqin-blue mb-3">3. Intelligent Forecasting & Visualization</h3>
+            <p class="text-lg mb-4">
+              Deliver <strong>90-day rolling cash forecasts</strong> with scenarios and variance drivers, visualized in dashboards (PowerBI/Streamlit) and export CFO-ready packs.
+            </p>
+            <p class="text-lg mt-4 italic text-gray-600">
+              Real-time insights with explainable AI for confident decision-making.
+            </p>
+          </div>
+        </div>
+
+        <h2 class="text-2xl font-bold text-logiqin-dark mt-8 mb-4">Optional Companions</h2>
+        <p class="text-lg mb-4">
+          ⚡ Add credibility and automation with:
+        </p>
+        <div class="grid md:grid-cols-2 gap-6 mb-8">
+          <div class="bg-logiqin-blue text-white p-6 rounded-xl">
+            <h3 class="text-xl font-bold mb-3">Variance Copilot</h3>
+            <p>Pre-fills CFO commentary with explanations for forecast variances and trends.</p>
+          </div>
+          <div class="bg-logiqin-blue text-white p-6 rounded-xl">
+            <h3 class="text-xl font-bold mb-3">Smart Collections</h3>
+            <p>Prioritizes overdue invoices by risk & value to optimize cash collection.</p>
+          </div>
+          <div class="bg-logiqin-blue text-white p-6 rounded-xl">
+            <h3 class="text-xl font-bold mb-3">Customer Support AI</h3>
+            <p>Triages invoice disputes automatically to reduce collection delays.</p>
+          </div>
+          <div class="bg-logiqin-blue text-white p-6 rounded-xl">
+            <h3 class="text-xl font-bold mb-3">Document Intelligence</h3>
+            <p>Auto-extracts data from PDFs (invoices, contracts, statements) for seamless processing.</p>
+          </div>
+        </div>
+
+        <p class="text-lg mb-8">
+          Together, these create a <strong>Finance Automation Suite</strong>, with Predictive Cash Flow as the hero use case.
+        </p>
+
+        <h2 class="text-2xl font-bold text-logiqin-dark mt-8 mb-4">Business Impact</h2>
+        <div class="bg-white p-6 rounded-xl shadow-card mb-8">
+          <ul class="space-y-3 text-lg">
+            <li class="flex items-start">
+              <span class="text-logiqin-blue font-bold mr-3">•</span>
+              <span>Cut surprises, free trapped cash, and reduce reliance on credit lines</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-logiqin-blue font-bold mr-3">•</span>
+              <span>CFO-ready explainability builds adoption & trust</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-logiqin-blue font-bold mr-3">•</span>
+              <span>Fast Proof of Concept (3–4 weeks) with anonymized AR/AP + FX index</span>
+            </li>
+          </ul>
+        </div>
+
+        <blockquote class="border-l-4 border-logiqin-blue pl-6 italic text-gray-600 text-xl my-8">
+          "Predict liquidity before it hits your books."
+        </blockquote>
+
+      </article>
+
+      <!-- CTA -->
+      <div class="text-center mt-16 bg-logiqin-blue p-10 rounded-2xl shadow-lg">
+        <h3 class="text-2xl font-bold text-white">Ready to transform your cash forecasting?</h3>
+        <p class="text-logiqin-soft-blue/80 mt-2 mb-6">
+          Book a free discovery session to see how AI can revolutionize your financial planning and cash management.
+        </p>
+        <a href="mailto:hello@logiqin.ai"
+          class="bg-white text-logiqin-blue font-bold py-4 px-8 rounded-lg inline-block shadow-lg hover:bg-gray-50 transition-colors">
+          hello@logiqin.ai
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Contact band  -->
+  <section id="contact" class="bg-logiqin-blue">
+    <div class="container mx-auto px-6 py-16">
+      <div class="grid grid-cols-1 md:grid-cols-3 items-center gap-8 text-center">
+        <div>
+          <img src="franck.webp" alt="Franck Clowez" class="mx-auto w-64 h-64 rounded-full object-cover">
+          <h3 class="font-bold text-white mt-4">Franck Clowez</h3>
+          <p class="text-logiqin-soft-blue/80">Biz Consulting</p>
+          <a href="mailto:Franck@logiqin.cloud" class="text-white hover:underline">Franck@logiqin.cloud</a>
+        </div>
+        <div>
+          <h2 class="text-headline-md font-bold text-white">Let's Start & Unlock your AI potential</h2>
+          <p class="text-body-lg text-logiqin-soft-blue/80 mt-2 mb-8">BOOK your AI discovery SESSION!</p>
+          <a href="mailto:hello@logiqin.ai" class="bg-white text-logiqin-blue font-bold py-4 px-8 rounded-lg inline-block shadow-lg">
+            hello@logiqin.ai
+          </a>
+          <p class="text-white/70 italic mt-6 text-body-md">"The first step to intelligent automation is a simple conversation."</p>
+        </div>
+        <div>
+          <img src="etienne.webp" alt="Etienne Duplessix" class="mx-auto w-64 h-64 rounded-full object-cover">
+          <h3 class="font-bold text-white mt-4">Etienne Duplessix</h3>
+          <p class="text-logiqin-soft-blue/80">Tech Consulting</p>
+          <a href="mailto:Etienne@logiqin.cloud" class="text-white hover:underline">Etienne@logiqin.cloud</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-bg-rotated bg-logiqin-dark py-16 sm:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-12 items-center">
+      <div class="text-white">
+        <h2 class="text-3xl font-bold">Don't miss AI revolution</h2>
+        <p class="mt-4 text-lg text-white">Join us and together we will step into new age of business!</p>
+      </div>
+
+      <div class="bg-slate-800/90 p-8 rounded-lg text-slate-300">
+        <div class="space-y-4">
+          <p>
+            <strong class="block text-white">Mail:</strong>
+            <a href="mailto:hello@logiqin.ai" class="hover:text-logiqin-blue">hello@logiqin.ai</a>
+          </p>
+          <p>
+            <strong class="block text-white">Mobile:</strong>
+            <a href="tel:+420725177736" class="hover:text-logiqin-blue">+420 725 177 736</a>
+          </p>
+          <p>
+            <strong class="block text-white">Address:</strong>
+            V Roháčích 161/4, Praha 5, 158 00, Czech Republic
+          </p>
+          <p>
+            <strong class="block text-white">Company ID:</strong>
+            CZ10816658
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-logiqin-dark text-white">
+    <div class="container mx-auto px-6 py-8 text-center text-gray-400">
+      <a href="https://www.makustudio.cz">&copy; 2025 <span class="hover:text-white">MAKU STUDIO</span></a>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="scripts.js"></script>
+</body>
+
+</html>

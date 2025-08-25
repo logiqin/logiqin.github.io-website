@@ -23,9 +23,26 @@ jobs:
       - run: npm ci
       - run: npm run build
 
+      # Copy HTML pages to dist folder
+      - name: Copy HTML pages
+        run: |
+          cp blog-detail.html dist/
+          cp use-case-detail.html dist/
+          cp predictive-cash-flow.html dist/
+
+      # Copy all public assets to dist folder
+      - name: Copy public assets
+        run: cp -r public/* dist/ || true
+
+      # Copy CSS and JS files to dist folder
+      - name: Copy CSS and JS files
+        run: |
+          cp src/style.css dist/ || true
+          cp src/main.js dist/ || true
+
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist    # 👈 tell it where Vite puts your build
+          path: ./dist    # �� tell it where Vite puts your build
 
   deploy:
     runs-on: ubuntu-latest
