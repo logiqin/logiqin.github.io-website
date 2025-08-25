@@ -37,8 +37,8 @@ jobs:
       # Copy CSS and JS files to dist folder
       - name: Copy CSS and JS files
         run: |
-          cp src/style.css dist/ || true
-          cp src/main.js dist/ || true
+          cp src/style.css dist/index.css || true
+          cp src/main.js dist/scripts.js || true
 
       - uses: actions/upload-pages-artifact@v3
         with:
