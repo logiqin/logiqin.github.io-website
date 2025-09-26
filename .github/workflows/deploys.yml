@@ -30,6 +30,7 @@ jobs:
           cp use-case-detail.html dist/
           cp predictive-cash-flow.html dist/
           cp training-coder-booster.html dist/
+          cp training-admin-booster.html dist/
 
       # Copy all public assets to dist folder
       - name: Copy public assets
